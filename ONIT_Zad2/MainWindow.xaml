@@ -1,0 +1,26 @@
+﻿<Window x:Class="ONIT_Zad2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ONIT_Zad2"
+        mc:Ignorable="d"
+        Title="Сканер портов и TCP-подключений" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Right" LastChildFill="True">
+                    <Button Content="&lt;" Width="50" DockPanel.Dock="Left" Command="{Binding MinusCommand}"></Button>
+                    <Button Content="&gt;" Width="50" DockPanel.Dock="Right" Command="{Binding PlusCommand}"></Button>
+                </DockPanel>
+
+                <ComboBox DockPanel.Dock="Left" ItemsSource="{Binding Types}" SelectedIndex="{Binding SelectedIndex}"></ComboBox>
+            </DockPanel>
+        </StackPanel>
+        <ContentControl Grid.Row="1" Content="{Binding Content}"></ContentControl>
+    </Grid>
+</Window>
